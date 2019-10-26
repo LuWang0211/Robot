@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="lulu.css">
+        <script src="lulu.js"></script>
+        <script src="lib.js"></script>
+    </head>
+    <body onload="createOnlineQuestionnaire()">
+    <div class="header">
+      <h2> Robot Face Questionnaire </h2>
+      <h4> Please rate this face in terms of the following scales.</h4>
+      
+    <div id="main-container">    
+        <div classs="section1">
+          <div class="robot">
+            <!-- This empty img will be filled through JS -->
+            <img id="robotFace" src="" >
+            <p> Name this robot: </p>
+            <input type="text" name="name" value="e.g. Bule faced robot">
+          </div>
+        </div>
+        <div class="section2">
+        </div>
+      </div>
+    <br>
+    <div class="questiontext">
+      <h4> Which of the following jobs is this robot suitable for? </h4>
+      <form>
+        <input type="checkbox" name="job1" value="Security"> Security
+        <input type="checkbox" name="job2" value="Service"> Service
+        <input type="checkbox" name="job3" value="Education"> Education
+        <input type="checkbox" name="job4" value="Industrial"> Industrial
+        <input type="checkbox" name="job5" value="Entertainment"> Entertainment
+      </form>
+      <br>
+      <button type="submit" class="btn btn-lg btn-block">Submit</button>
+    </div>
+  </body>
+  </html>

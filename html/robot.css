@@ -9,30 +9,62 @@ h1 {
 #myCanvas{
   border: 1px white solid;
   background-color: #ccc;
+  margin-bottom: 50px;
+  width: 400px
 }
 
 div.container {
   border: 2px black solid;
   background-color: #AAA;
   text-align: center;
-  width: 500px;
+  width: 600px;
   height: 400px;
   margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+    justify-items: normal;
+    align-items: center;
 }
 
-div.wrapper {
+div.chat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100%;
+  justify-content: flex-start;
+  height: 50%;
   width: 100%;
 }
 
 #dialog_area {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   font-family: monospace;
+  margin-left: -2em;
+}
+
+div.bubble {
+  margin: 5px;
+  position: left;
+  text-align: left;
+  line-height: 50px;
+  background-color: whitesmoke;
+  border-radius: 58px;
+  box-shadow: 2px 2px 4px #888;
+}
+
+div.bubbledark {
+  margin: 5px;
+  position: left;
+  text-align: left;
+  line-height: 50px;
+  background-color: gainsboro;
+  border-radius: 58px;
+  box-shadow: 2px 2px 4px #888;
+}
+
+.bubble, .bubbledark {
+  padding-left: 2em;
+  width: 100%;
 }

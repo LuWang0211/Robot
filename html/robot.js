@@ -1,11 +1,17 @@
 let recognition = null;
 
+// robot questions and reply answers
+const randomQuestion = [
+  'Hello, Did you exercise yesterday?',
+  'Grad to see you again. Are you feeling happy today?',
+  'I am haha, is there anything I can help you?',
+]
 
-const randomSpeeches = [
-  'Oh yes?',
-  'What are you talking about?',
-  'I thought the same!',
-  "That's what's I am thinking!"
+const randomAnswers = [
+  'Oh yes? is that true?',
+  'I see. thanks for your answer. Do you want to continue?',
+  'I thought the same! Do you want to share more info?',
+  "Sorry, could you repeat it again?"
 ]
 
 function robotInitialize() {
@@ -27,9 +33,9 @@ function robotInitialize() {
         // drawEye(200 - distanceFromCenterX, eyeCenterY, angle);
         // drawEye(200 + distanceFromCenterX, eyeCenterY, angle);
 
-      // if (counter % 3 == 0) {
-      //     shouldBlink = !shouldBlink;
-      // } 
+        // if (counter % 3 == 0) {
+        //     shouldBlink = !shouldBlink;
+        // } 
 
         drawEye(200 - distanceFromCenterX, eyeCenterY, angle, shouldBlink);
         drawEye(200 + distanceFromCenterX, eyeCenterY, angle, shouldBlink);
@@ -162,21 +168,25 @@ function drawEyebrows(EyebrowsX, EyebrowsY) {
 function startRecognition() {
   console.log('startRecognition');
   document.getElementById('startSpeak').innerHTML = 'now recording your speech...';
+
+  let word = 'Robot said:';
+  const pickSentence1 = randomQuestion[Math.floor(Math.random() * randomQuestion.length)];
+  document.getElementById('robotReply1').innerHTML = `${word} ${'&nbsp;'.repeat(15 - word.length)} ${pickSentence1}`;
+
   document.getElementById('dialog_area').style.color = 'grey';
   recognition.start();
 };
   
 function processSpeech(event) {
-  var inputSpeech = event.results[0][0].transcript;
-  var textDiv = document.getElementById("speech");
+  let inputSpeech = event.results[0][0].transcript;
+  let textDiv = document.getElementById("speech");
 
-  let word = 'you said:';
-  textDiv.innerHTML = `${word} ${'&nbsp;'.repeat(15 - word.length)} ${inputSpeech}`;
+  let answer = 'You said:';
+  textDiv.innerHTML = `${answer} ${'&nbsp;'.repeat(15 - answer.length)} ${inputSpeech}`;
 
-
-  word = 'Robot says:';
-  const pickSentence = randomSpeeches[Math.floor(Math.random() * randomSpeeches.length)];
-  document.getElementById('robotReply').innerHTML = `${word} ${'&nbsp;'.repeat(15 - word.length)} ${pickSentence}`;
+  let word = 'Robot said:';
+  const pickSentence2 = randomAnswers[Math.floor(Math.random() * randomAnswers.length)];
+  document.getElementById('robotReply2').innerHTML = `${word} ${'&nbsp;'.repeat(15 - word.length)} ${pickSentence2}`;
 
   recognition.stop();
 }
@@ -186,6 +196,5 @@ function recognitionEnded() {
   console.log("onend happened");
   document.getElementById('startSpeak').innerHTML = 'no speech detected, click here to speak';
   document.getElementById('dialog_area').style.color = 'black';
-  
   recognition.stop();
 }

@@ -1,0 +1,38 @@
+* {
+  margin: 0px;
+}
+
+h1 {
+  font-size: 56px;
+}
+
+#myCanvas{
+  border: 1px white solid;
+  background-color: #ccc;
+}
+
+div.container {
+  border: 2px black solid;
+  background-color: #AAA;
+  text-align: center;
+  width: 500px;
+  height: 400px;
+  margin: 10px auto;
+}
+
+div.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#dialog_area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: monospace;
+}

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="camera.css">
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+        <script src="camera.js"></script>
+    </head>
+
+    <body>
+    <div class="wrapper">
+        <div  class="innerElement">
+        This page tests the <strong>Camera functionality</strong>.
+        </div>
+
+    <!--The video element for capturing images from the camera -->
+        <h4>This video captured from the camera.</h4>
+        <video id="myVideo" width="320" height="240" autoplay="true">
+        </video>
+        
+    <!--Button to start video stram -->
+        <tb>
+            <button type="button" onclick="startVideo()">Start camera</button>
+            <button type="button" onclick="endVideo()">End camera</button>
+        </tb>
+    
+    <!--Button to start video stram -->
+        <div id="details">
+            Current light is <span id='lightValue'></span> % Camera blocked? 
+            <span id="cameraStatus"></span> 
+        </div>
+
+    <!-- The canvas for displaying images captured from the camera -->
+        <h4>This gray images captured from the camera.</h4>
+        <canvas id="mainCanvas" height=240 width=320></canvas>
+        
+    </div>
+    </body>
+</html>

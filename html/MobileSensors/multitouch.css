@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Helvetica;
+  font-size: 24px;
+}
+
+div.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  margin: 10px;
+}
+
+div#title {
+  text-align: center;  
+}
+
+canvas {
+    margin: 10px;
+    border: 2px gray solid;
+    position:relative;
+}
